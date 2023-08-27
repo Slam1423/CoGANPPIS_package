@@ -52,11 +52,8 @@ def test(model, loader,path_dir,threshold,test_name):
 
     #caculate
     all_preds = np.concatenate(result, axis=0)
-#    print(all_preds)
     all_preds2 = all_preds >= threshold
     all_preds2 = all_preds2.astype(int)
-#    print(all_preds)
-#    print(threshold)
     result_file = "predict_result_dir/" + test_name + "_predict_result.pkl"
 
     with open(result_file,"wb") as fp:
@@ -96,21 +93,11 @@ def predict(model_file,test_data,window_size,path_dir,threshold=0.51,test_name='
 
     # Models
     class_nums = 1
-#    model = PPIModel(class_nums,window_size)
     model = torch.load(model_file)
     if torch.torch.cuda.is_available():
-#        pretrained_model = torch.load(model_file)
-#        model.load_state_dict(pretrained_model, strict=False)
-
-#        model = torch.load('model_0826_test.pth')
-
-#        torch.save(model, 'model_0826_test.pth')
-        
         model = model.cuda()
         model.eval()
     else:
-#        pretrained_model = torch.load(model_file, map_location='cpu')
-#        model.load_state_dict(pretrained_model, strict=False)
         model.eval()
 
     test(model, test_loader,path_dir,threshold, test_name)
