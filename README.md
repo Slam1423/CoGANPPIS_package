@@ -47,5 +47,5 @@ cd CoGANPPIS_package/
 python3 main.py -f example -d nr -n 1000
 ```
 
-The predicted labels will be saved to `CoGANPPIS_package/predict_result.pkl` in the form of list in python, whose elements sequentially refer to the predicted labels of the residues and length is equal to the total number of residues of the input sequences. 
+The predicted labels will be saved to `predict_result_dir/predict_result.pkl` in the form of list in python, whose elements sequentially refer to the predicted labels of the residues and length is equal to the total number of residues of the input sequences. 
 
