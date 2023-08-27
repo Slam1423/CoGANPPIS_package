@@ -60,7 +60,7 @@ total_cnt = 0
 print('Start netsurfp...')
 print('biolib.__version__: ' + biolib.__version__)
 nsp3 = biolib.load('DTU/NetSurfP-3')
-nsp3_results = nsp3.cli(args='-i raw_input_sequences/dset422_seq.txt')
+nsp3_results = nsp3.cli(args='-i raw_input_sequences/' + dataset_name + '_seq.txt')
 nsp3_results.save_files("biolip_netsurfp/")
 netsurf_df = pd.read_csv('biolip_netsurfp/results.csv', header=0)
 asa_max = netsurf_df.iloc[:, 4].max()
