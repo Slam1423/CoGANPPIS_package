@@ -24,7 +24,7 @@ usage example: `-f example`
 `-d`: Protein database for Blast.
 usage example: `-d nr`
 
-`-n`: Number of sequences in multiple sequence alignments. (preferably greater than 1000)
+`-n`: Number of sequences in multiple sequence alignments. (preferably >= 1000)
 usage example: `-n 1000`
 
 ## How to run
